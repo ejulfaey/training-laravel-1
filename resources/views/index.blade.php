@@ -1,35 +1,41 @@
 @component('layouts.app')
 @slot('content')
-<div class="row">
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Total Todos</h5>
-                <h6>{{ $total_todos }}</h6>
+<div class="jumbotron">
+    <h1 class="display-4">Todo Apps</h1>
+    <p class="lead">This is simple project to show CRUD features using Laravel Framework</p>
+    <hr class="my-4">
+    <p>Simple Analytics</p>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Todos</h5>
+                    <h6>{{ $total_todos }}</h6>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">In Progress</h5>
-                <h6>{{ $total_progress }}</h6>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">In Progress</h5>
+                    <h6>{{ $total_progress }}</h6>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Completed</h5>
-                <h6>{{ $total_completed }}</h6>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Completed</h5>
+                    <h6>{{ $total_completed }}</h6>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h6 class="card-title">Create New Todo</h6>
-                <a href="{{ route('todo.create') }}" class="btn btn-primary btn-sm">New Todo</a>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Create New Todo</h6>
+                    <a href="{{ route('todo.create') }}" class="btn btn-primary btn-sm">New Todo</a>
+                </div>
             </div>
         </div>
     </div>
