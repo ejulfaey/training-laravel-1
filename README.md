@@ -15,7 +15,7 @@
     * Copy content from `.env.example` and paste it into `.env`
     * Configure your database credential: `DB_DATABASE, DB_USERNAME, DB_PASSWORD`
     * Run migration `php artisan migrate`
-    ##### 4. Generate Key
+    ##### 4. Generate Application Key
     * `php artisan key:generate`
     ##### 5. Serve your application
     * `php artisan serve`   
