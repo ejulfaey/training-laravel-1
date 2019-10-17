@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container my-5 p-5" style="background-color: #F7F7F7">
+    <div class="container my-5 p-5">
         {{ $content }}
     </div>
 

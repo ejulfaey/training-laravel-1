@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Total Todos</h5>
-                <h6>5</h6>
+                <h6>{{ $total_todos }}</h6>
             </div>
         </div>
     </div>
@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">In Progress</h5>
-                <h6>3</h6>
+                <h6>{{ $total_progress }}</h6>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Completed</h5>
-                <h6>2</h6>
+                <h6>{{ $total_completed }}</h6>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
 </div>
 <div class="row my-5">
     <div class="col-md-12">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-hover">
             <thead class="thead-light">
                 <tr>
                     <th>#</th>
@@ -48,6 +48,28 @@
                 </tr>
             </thead>
             <tbody>
+                @forelse($todos as $todo)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $todo->title }}</td>
+                    <td>{{ $todo->description }}</td>
+                    <td>
+                        <span class="badge {{ $todo->status == 1 ? 'badge-success' : 'badge-info' }}">
+                            {{ $todo->status == 1 ? 'Completed' : 'In-Progress' }}
+                        </span>
+                    </td>
+                    <td>{{ date('d M Y', strtotime($todo->created_at)) }}</td>
+                    <td>
+                        <a href="{{ route('todo.edit', $todo) }}" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ route('todo.delete', $todo) }}" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="6" align="center">No Todo</td>
+                </tr>
+
+                @endforelse
             </tbody>
         </table>
     </div>
