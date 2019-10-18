@@ -19,6 +19,7 @@ class ApiController extends Controller
         foreach ($todos as $todo) {
             array_push($result, [
                 'id' => $todo->id,
+                'username' => $todo->username,
                 'title' => $todo->title,
                 'description' => $todo->description,
                 'status' => $todo->status,
