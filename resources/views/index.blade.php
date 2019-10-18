@@ -46,6 +46,7 @@
             <thead class="thead-light">
                 <tr>
                     <th>#</th>
+                    <th>Username</th>
                     <th>Title</th>
                     <th>Description</th>
                     <th>Status</th>
@@ -57,6 +58,7 @@
                 @forelse($todos as $todo)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
+                    <td>{{ $todo->username }}</td>
                     <td>{{ $todo->title }}</td>
                     <td>{{ $todo->description }}</td>
                     <td>
@@ -80,5 +82,6 @@
         </table>
     </div>
 </div>
+{{ $todos->links() }}
 @endslot
 @endcomponent

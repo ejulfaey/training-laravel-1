@@ -11,7 +11,7 @@ class TodoController extends Controller
     public function index()
     {
         $todos = Todo::latest()
-        ->get();
+        ->paginate(15);
 
         $total_todos = Todo::count();
         $total_progress = Todo::whereStatus(0)->count();

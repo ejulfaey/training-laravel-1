@@ -13,6 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('list_todo', 'ApiController@todoList');
+Route::post('create_todo', 'ApiController@createTodo');
