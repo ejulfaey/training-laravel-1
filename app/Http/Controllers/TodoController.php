@@ -34,6 +34,7 @@ class TodoController extends Controller
     {
 
         $todo = new Todo;
+        $todo->username = 'Web User';
         $todo->title = $request->title;
         $todo->description = $request->description;
         $todo->save();
